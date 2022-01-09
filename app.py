@@ -16,7 +16,7 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
 })
 
 #Skomentuj jeśli nie robisz tego na windowsie
-pathlib.PosixPath = pathlib.WindowsPath
+# pathlib.PosixPath = pathlib.WindowsPath
 dir_path = os.path.dirname(os.path.realpath(__file__))
 model = f'{os.path.join(dir_path, "models", "densenet_201_87pc.pkl")}'
 
@@ -33,10 +33,18 @@ def model_predict(img_path, model_path):
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
-    
+
 @app.route('/home', methods=['GET'])
 def home():
     return render_template('home.html')
+
+@app.route('/battle', methods=['GET'])
+def battle():
+    return render_template('battle.html')
+
+@app.route('/pokedex', methods=['GET'])
+def pokedex():
+    return render_template('pokedex.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():

@@ -8,9 +8,10 @@ $(document).ready(function () {
                 opacity: 'show',
                 backgroundColor: "white",
             }, 500, function() {
-              $('#ash').show(2000, 'easeOutCirc', function() {
-                  document.location.href = url;
-              });
+                $('#ash').css('display', 'block');
+                setTimeout(function() {
+                    document.location.href = url;
+                }, 1800);
             });
         });
         return false;
