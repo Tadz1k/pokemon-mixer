@@ -63,9 +63,12 @@ def upload():
         if pokemons[0] == pokemons[1]: #Trzeba zwracać błąd, jeśli pokemony są takie same
             print('Te same pokemony!')
         else:
+            pokemons_test = []
+            pokemons_test.append(pokemons_data.get(pokemons[0]))
+            pokemons_test.append(pokemons_data.get(pokemons[1]))
             stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
             #return pokemons_data  <--- pokemons_data[nazwa_pokemona][statystyka] -> nazwy statystyk są w stats.generator.py
-            return tuple(pokemons)
+            return tuple(pokemons_test)
     return None
 
 if __name__ == '__main__':
