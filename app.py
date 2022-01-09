@@ -67,8 +67,7 @@ def upload():
             pokemons_test.append(pokemons_data.get(pokemons[0]))
             pokemons_test.append(pokemons_data.get(pokemons[1]))
             stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
-            #return pokemons_data  <--- pokemons_data[nazwa_pokemona][statystyka] -> nazwy statystyk są w stats.generator.py
-            return tuple(pokemons_test)
+            return tuple(pokemons_test) #pokemons_test[0]['name'] <- wszystkie statystyki są opisane w stats_generator.py
     return None
 
 if __name__ == '__main__':
