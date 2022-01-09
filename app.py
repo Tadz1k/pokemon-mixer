@@ -4,8 +4,10 @@ from fastai.vision.all import *
 from fastai.vision.widgets import *
 from sassutils.wsgi import SassMiddleware
 import pathlib
-
 import os
+
+#Własne importy
+import stats_generator
 
 app = Flask(__name__)
 
@@ -42,22 +44,27 @@ def upload():
         basepath = Path(__file__).parent
         uploads_path = basepath.joinpath('uploads')
         pokemons = []
+        pokemons_data = {}
         for file in request.files.items():
             file_path1 = uploads_path.joinpath(f'{file[0]}')
             file[1].save(f'{file_path1}')
 
             path = Path()
             model_path = (path/model)
-            # do poprawy żeby wrzucić do modelu co potrzebne
 
             out = model_predict(os.path.join(dir_path, "uploads", f'{file[0]}'), path/model_path)
-            print(out)
-
+            pokemons_data[out] = {}
+            #zliczenie statystyk pokemona
+            stats = stats_generator.getPokemonStats(out)
+            pokemons_data[out] = stats
+            #tutaj możemy też zrobić dicta z statystykami, żeby wyświetlić je na froncie
             pokemons.append(out)
 
-
-
-        return tuple(pokemons)
+        if pokemons[0] == pokemons[1]: #Trzeba zwracać błąd, jeśli pokemony są takie same
+            print('Te same pokemony!')
+        else:
+            stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
+            return tuple(pokemons)
     return None
 
 if __name__ == '__main__':
