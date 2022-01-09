@@ -64,6 +64,7 @@ def upload():
             print('Te same pokemony!')
         else:
             stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
+            #return pokemons_data  <--- pokemons_data[nazwa_pokemona][statystyka] -> nazwy statystyk są w stats.generator.py
             return tuple(pokemons)
     return None
 
