@@ -1,0 +1,170 @@
+@import 'common';
+body {
+	margin: 0;
+	background-color: $blue;
+	background-image: radial-gradient($blue 20%, $darkblue 50%, rgba($black, .5) 100%);
+	background-size: 120%;
+	background-position: center;
+	font-family: $default-font;
+	animation: tighten-vinette ease-out ($animation-unit * 6) forwards;
+	clip-path: circle(75%);
+}
+
+.images {
+	pointer-events: none;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	position: absolute;
+	opacity: .6;
+	z-index: 20;
+	background-size: cover;
+	background-position: center;
+	background-repeat: none;
+}
+
+.start-journey {
+	display: block;
+    width: 260px;
+    margin: 0 auto;
+	color: $white;
+	margin-top: 120px;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: -.08rem;
+	transition: opacity $animation-unit/2 linear;
+	font-size: 30px;
+	text-decoration: none;
+}
+
+.start-journey::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+.start-journey:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+// Cue all the animations when run-animation class is activated
+.wrapper.run-animation {
+	animation: shrink ease-out ($animation-unit * 16) forwards ($animation-unit * 2);
+	.pokemonFont {
+	transform: translateX($tween);
+	animation: slide-out-X $slideOut ease forwards;
+}
+	.battlesFont {
+		transform: translateX(-$tween);
+		color: transparent;
+		animation: slide-out-X $slideOut ease forwards, show-text $animation-unit linear forwards ($slideOut * 2);
+		&:before {
+			transform: translateY(($font-size + ($text-padding * 2)) / 2);
+			animation: slide-out-Y $animation-unit ease forwards $slideOut;
+		}
+		&:after {
+			transform: translateY(-(($font-size + ($text-padding * 2)) / 2));
+			animation: slide-out-Y $animation-unit ease forwards $slideOut;
+		}
+	}
+	.start-journey {
+		opacity: 0;
+		animation: fade-down ($animation-unit * 4) ease ($animation-unit * 12) forwards;
+	}
+	~ .images {
+		animation: flicker-images ($animation-unit * 5) 2 steps(1, end), fade-out ($animation-unit * 5 * 3) forwards;
+	}
+}
+
+
+@keyframes slide-out-X {
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slide-out-Y {
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes show-text {
+	100% {
+		color: $white;
+	}
+}
+
+@keyframes shrink {
+	100% {
+		transform: scale(0.8);
+	}
+}
+
+@keyframes tighten-vinette {
+	100% {
+		background-size: 120%;
+	}
+}
+
+@keyframes fade-down {
+	0% {
+		transform: translateY(-2rem);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: .5;
+	}
+}
+
+@keyframes fade-out {
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes flicker-images {
+	0% {
+		background-image: url("../photos/pokemon1.jpg");
+	}
+	10% {
+		background-image: url("../photos/pokemon2.jpg");
+	}
+	20% {
+		background-image: url("../photos/pokemoncards.jpg");
+	}
+	30% {
+		background-image: url("../photos/pokemon3.jpeg");
+	}
+	40% {
+		background-image: url("../photos/ash1.jpg");
+	}
+	50% {
+		background-image: url("../photos/teamr.png");
+	}
+	60% {
+		background-image: url('https://i.gifer.com/T6Ll.gif');
+	}
+	70% {
+		background-image: url('https://i.gifer.com/REL3.gif');
+	}
+	80% {
+		background-image: url('https://i.gifer.com/LyGv.gif');
+	}
+	90% {
+		background-image: url('https://c.tenor.com/Ken3eHIfWnAAAAAC/pokemon-squirtle.gif');
+	}
+	100% {
+    	background-image: url('https://filmdaily.co/wp-content/uploads/2021/01/pokemon-lede-1-1300x732.jpg');
+	}
+}
