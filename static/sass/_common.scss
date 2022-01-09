@@ -1,0 +1,38 @@
+// colors
+$blue: #3560ac;
+$darkblue: #2e318e;
+$white: #fff;
+$black: #000;
+
+// typography
+$default-font: 'Barlow Condensed', sans-serif;
+$font-size: 5rem;
+$text-padding: .4rem;
+$tween: 95px;
+
+// animations
+$animation-unit: 300ms;
+$slideOut: $animation-unit * 2.5;
+$slideStudios: $animation-unit * 4;
+
+
+* {
+	box-sizing: border-box;
+}
+
+.wrapper {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.battlesFont {
+	position: relative;
+	top: 66px;
+    left: -46px;
+}
+
+.pokemonFont {
+	transform: translateX($tween);
+}

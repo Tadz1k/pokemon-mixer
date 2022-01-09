@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Battle</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animation.scss.css') }}" rel="stylesheet" type="text/css">
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+</head>
+<body>
+    <div class="wrapper run-animation" id="animate">
+        <div class="logo">
+            <img class="pokemonFont" src="{{ url_for('static', filename='photos/pokemonlogo.png') }}" height="198" width="538"/>
+            <img class="battlesFont" src="{{ url_for('static', filename='photos/pokemonbattles.png') }}" height="109" width="296"/>
+            <a class="start-journey" href="home">Start a journey!</a>
+        </div>
+    </div>
+    <div class="images"></div>
+    <center><img id="ash" src="{{ url_for('static', filename='photos/ash-pokemon.gif') }}" style="display: none;height: 80%;width: 80%;"></center>
+</body>
+</html>
+
+
