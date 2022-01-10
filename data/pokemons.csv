@@ -24,3 +24,7 @@ id,name,type,total,hp,attack,defense,speedattack,speeddefense,speed,image,create
 22,Lapkey,FIGHTING,436,51,85,96,92,51,61,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:23:12,Lapras,Mankey
 23,Lapkey,WATER ICE,351,35,72,83,44,67,50,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:23:40,Lapras,Mankey
 24,Kabukey,ROCK WATER,366,51,88,103,41,50,33,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:24:20,Kabuto,Mankey
+25,Kabukey,FIGHTING,327,30,78,26,55,49,89,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:26:09,Kabuto,Mankey
+26,Kabukey,ROCK WATER,343,19,80,75,69,54,46,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:26:55,Kabuto,Mankey
+27,Kabukey,ROCK WATER,305,33,82,23,70,41,56,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:27:38,Kabuto,Mankey
+28,Kabukarp,ROCK WATER,297,24,77,89,13,23,71,https://images.alexonsager.net/pokemon/fused/140/140.129.png,10/01/2022 12:28:55,Kabuto,Magikarp
