@@ -72,8 +72,8 @@ def generateNewPokemon(stats1, stats2):
             temp_total += int(stats[x])
     stats['total'] = temp_total    
     #odczyt z csvki, jakie ID powinien dostać pokemon
-    stats['id'] = int(csv_controller.getNewId())+1
-    csv_controller.saveToFile(stats)
+    stats['id'] = int(csv_controller.get_new_id())+1
+    csv_controller.save_to_file(stats)
 
 
     return stats

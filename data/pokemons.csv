@@ -28,3 +28,10 @@ id,name,type,total,hp,attack,defense,speedattack,speeddefense,speed,image,create
 26,Kabukey,ROCK WATER,343,19,80,75,69,54,46,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:26:55,Kabuto,Mankey
 27,Kabukey,ROCK WATER,305,33,82,23,70,41,56,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:27:38,Kabuto,Mankey
 28,Kabukarp,ROCK WATER,297,24,77,89,13,23,71,https://images.alexonsager.net/pokemon/fused/140/140.129.png,10/01/2022 12:28:55,Kabuto,Magikarp
+29,Horsdeen,WATER,302,22,32,63,70,61,54,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:47,Horsea,Goldeen
+30,Horsdeen,WATER,326,34,26,59,77,55,75,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:51,Horsea,Goldeen
+31,Horsdeen,WATER,269,35,39,77,34,46,38,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:52,Horsea,Goldeen
+32,Horsdeen,WATER,274,25,68,69,39,29,44,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:53,Horsea,Goldeen
+33,Horsdeen,WATER,330,28,67,61,55,45,74,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:54,Horsea,Goldeen
+34,Horsdeen,WATER,271,18,64,78,30,25,56,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:55,Horsea,Goldeen
+35,Horsdeen,WATER,344,24,71,46,90,50,63,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:56,Horsea,Goldeen
