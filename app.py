@@ -33,18 +33,10 @@ def model_predict(img_path, model_path):
 @app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
-
+    
 @app.route('/home', methods=['GET'])
 def home():
     return render_template('home.html')
-
-@app.route('/battle', methods=['GET'])
-def battle():
-    return render_template('battle.html')
-
-@app.route('/pokedex', methods=['GET'])
-def pokedex():
-    return render_template('pokedex.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
@@ -71,11 +63,15 @@ def upload():
         if pokemons[0] == pokemons[1]: #Trzeba zwracać błąd, jeśli pokemony są takie same
             print('Te same pokemony!')
         else:
-            pokemons_test = []
-            pokemons_test.append(pokemons_data.get(pokemons[0]))
-            pokemons_test.append(pokemons_data.get(pokemons[1]))
-            stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
-            return tuple(pokemons_test) #pokemons_test[0]['name'] <- wszystkie statystyki są opisane w stats_generator.py
+            pokemons_test = {}
+            pokemons_test[pokemons_data.get(pokemons[0])['name']] = pokemons_data.get(pokemons[0])
+            pokemons_test[pokemons_data.get(pokemons[1])['name']] = pokemons_data.get(pokemons[1])
+            #pokemons_test.append(pokemons_data.get(pokemons[0]))
+            #pokemons_test.append(pokemons_data.get(pokemons[1]))
+            new_pokemon = stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
+            #pokemons_test.append(new_pokemon)
+            pokemons_test[new_pokemon['name']] = new_pokemon
+            return pokemons_test
     return None
 
 if __name__ == '__main__':
