@@ -1,0 +1,66 @@
+@import 'common';
+
+.predict-button-wrapper {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.skew {
+    transform: skewX(15deg);
+}
+
+.arrow-svg {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 5%;
+}
+
+svg {
+    height: 35px;
+    width: 45px;
+}
+
+/**************SVG****************/
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.skew-container:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.skew-container:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.skew-container:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #FBC638;
+    }
+    100% {
+        fill: white;
+    }
+}

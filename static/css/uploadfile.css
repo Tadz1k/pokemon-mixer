@@ -13,9 +13,13 @@
     justify-content: space-around;
     align-items: center;
 }
+
 .upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
-    max-width: 32rem;
+    width: 32rem;
     background-color: var(--clr-white);
     box-shadow: 0 10px 60px rgb(218, 229, 255);
     border: 2px solid var(--clr-light-blue);
@@ -23,10 +27,7 @@
     padding: 2rem 1.875rem 5rem 1.875rem;
     margin: 0.625rem;
     text-align: center;
-}
-
-.upload-area--open {
-    animation: slidDown 500ms ease-in-out;
+    animation: pulse 3000ms infinite;
 }
 
 @keyframes slidDown {
@@ -53,8 +54,9 @@
   /* Drop Zoon */
   .upload-area__drop-zoon {
     position: relative;
-    height: 11.25rem; /* 180px */
+    height: 358px;
     display: flex;
+    width: 256px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -63,32 +65,20 @@
     margin-top: 2.1875rem;
     cursor: pointer;
     transition: border-color 300ms ease-in-out;
+    background: url('../photos/pokemoncard.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.5;
+    transition: opacity .5s ease-out;
   }
-  
+
+  .upload-area__drop-zoon:hover {
+    opacity: 0.9;
+  }
+
   .upload-area__drop-zoon:hover {
     border-color: var(--clr-blue);
   }
-  
-  .drop-zoon__icon {
-    display: flex;
-    font-size: 3.75rem;
-    color: var(--clr-blue);
-    transition: opacity 300ms ease-in-out;
-  }
-  
-  .drop-zoon__paragraph {
-    font-size: 0.9375rem;
-    color: var(--clr-light-gray);
-    margin: 0;
-    margin-top: 0.625rem;
-    transition: opacity 300ms ease-in-out;
-  }
-  
-  .drop-zoon:hover .drop-zoon__icon,
-  .drop-zoon:hover .drop-zoon__paragraph {
-    opacity: 0.7;
-  }
-  
+
   .drop-zoon__loading-text {
     position: absolute;
     top: 50%;
@@ -125,22 +115,7 @@
   .drop-zoon--over {
     border-color: var(--clr-blue);
   }
-  
-  .drop-zoon--over .drop-zoon__icon,
-  .drop-zoon--over .drop-zoon__paragraph {
-    opacity: 0.7;
-  }
-  
-  /* (drop-zoon--over) Modifier Class */
-  .drop-zoon--Uploaded {
-    
-  }
-  
-  .drop-zoon--Uploaded .drop-zoon__icon,
-  .drop-zoon--Uploaded .drop-zoon__paragraph {
-    display: none;
-  }
-  
+
   /* File Details Area */
   .upload-area__file-details {
     height: 0;
@@ -149,7 +124,7 @@
     text-align: left;
     transition: none 500ms ease-in-out;
     transition-property: opacity, visibility;
-    transition-delay: 500ms;
+    transition-delay: 500ms;`
   }
   
   /* (duploaded-file--open) Modifier Class */

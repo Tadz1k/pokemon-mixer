@@ -7,100 +7,108 @@
     <title>Document</title>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
     <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/header.scss.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/home.scss.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/uploadfile.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/home.js') }}" type="text/javascript"></script>
 </head>
-<body>
+<body class="body-animation">
     <header class="header">
-        <div class="headerLogo">
-            <img class="pokemonFont" src="{{ url_for('static', filename='photos/pokemonlogo.png') }}" height="49" width="134"/>
-            <img class="battlesFont" src="{{ url_for('static', filename='photos/pokemonbattles.png') }}" height="27" width="74"/>
+        <div>
+          <a href="#">
+            <img class="pokemonLogo" src="{{ url_for('static', filename='photos/pokemonlogo.png') }}" height="69" width="188"/>
+          </a>
         </div>
         <nav class="headerMenu">
-            <!-- <ul class="headerMenu__list">
+            <ul class="headerMenu__list">
                 <li class="headerMenu__listItem">
-                    <a class="headerMenu__listItemLink hoverLink" href="/client">Klient</a>
+                    <a class="skew-container headerMenu__listItemLink" href="/battle" style="font-size: 22px;">Battle 1vs1</a>
                 </li>
                 <li class="headerMenu__listItem">
-                    <a class="headerMenu__listItemLink hoverLink" href="/car">Samochód</a>
+                    <a class="skew-container headerMenu__listItemLink" href="/pokedex" style="font-size: 22px;">Pokedex</a>
                 </li>
-                <li class="headerMenu__listItem">
-                    <a class="headerMenu__listItemLink hoverLink" href="/rental">Wypożyczenie</a>
-                </li>
-            </ul> -->
+            </ul>
         </nav>
     </header>
-    <form id="upload-file" action="{{ url_for('upload') }}"method="post" enctype="multipart/form-data">
-        <div id="upload-area-container">
-            <div id="uploadArea-pokemon1" class="upload-area">
-                <div class="upload-area__header">
-                  <h1 class="upload-area__title">Upload your first pokemon</h1>
-                  <p class="upload-area__paragraph">
-                    File should be an image in format jpeg, .png, .svg, .gif
-                  </p>
-                </div>
-                <div id="dropZoon-pokemon1" class="upload-area__drop-zoon drop-zoon">
-                  <span class="drop-zoon__icon">
-                    <i class='bx bxs-file-image'></i>
-                  </span>
-                  <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
-                  <span id="loadingText-pokemon1" class="drop-zoon__loading-text">Please Wait</span>
-                  <img src="" alt="Preview Image" id="previewImage-pokemon1" class="drop-zoon__preview-image" draggable="false">
-                  <label for="fileInput-pokemon1"></label>
-                  <input type="file" name="file1" id="fileInput-pokemon1" class="drop-zoon__file-input" accept=".png, .jpg, .jpeg">
-                </div>
-                <div id="fileDetails-pokemon1" class="upload-area__file-details file-details">
-                  <h3 class="file-details__title">Uploaded File</h3>
-                  <div id="uploadedFile-pokemon1" class="uploaded-file">
-                    <div class="uploaded-file__icon-container">
-                      <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                      <span class="uploaded-file__icon-text-pokemon1"></span> <!-- Data Will be Comes From Js -->
-                    </div>
-                    <div id="uploadedFileInfo-pokemon1" class="uploaded-file__info">
-                      <span class="uploaded-file__name-pokemon1">Proejct 1</span>
-                      <span class="uploaded-file__counter-pokemon1">0%</span>
+    <main class="column-container mainContainer">
+      <form id="upload-file" action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+          <div id="upload-area-container">
+              <div id="uploadArea-pokemon1" class="upload-area u-bounce">
+                  <div class="upload-area__header">
+                    <h1 class="upload-area__title">Upload your first pokemon</h1>
+                    <p class="upload-area__paragraph">
+                      File should be an image in format jpeg, .png, .svg, .gif
+                    </p>
+                  </div>
+                  <div id="dropZoon-pokemon1" class="upload-area__drop-zoon drop-zoon">
+                    </span>
+                    <span id="loadingText-pokemon1" class="drop-zoon__loading-text">Please Wait</span>
+                    <img src="" alt="Preview Image" id="previewImage-pokemon1" class="drop-zoon__preview-image" draggable="false">
+                    <label for="fileInput-pokemon1"></label>
+                    <input type="file" name="file1" id="fileInput-pokemon1" class="drop-zoon__file-input" accept=".png, .jpg, .jpeg">
+                  </div>
+                  <div id="fileDetails-pokemon1" class="upload-area__file-details file-details">
+                    <h3 class="file-details__title">Uploaded File</h3>
+                    <div id="uploadedFile-pokemon1" class="uploaded-file">
+                      <div class="uploaded-file__icon-container">
+                        <i class='bxs-file-blank uploaded-file__icon'></i>
+                        <span class="uploaded-file__icon-text-pokemon1"></span> <!-- Data Will be Comes From Js -->
+                      </div>
+                      <div id="uploadedFileInfo-pokemon1" class="uploaded-file__info">
+                        <span class="uploaded-file__name-pokemon1">Proejct 1</span>
+                        <span class="uploaded-file__counter-pokemon1">0%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div id="uploadArea-pokemon2" class="upload-area">
-                <div class="upload-area__header">
-                  <h1 class="upload-area__title">Upload your second pokemon</h1>
-                  <p class="upload-area__paragraph">
-                    File should be an image in format jpeg, .png, .svg, .gif
-                  </p>
-                </div>
-                <div id="dropZoon-pokemon2" class="upload-area__drop-zoon drop-zoon">
-                  <span class="drop-zoon__icon">
-                    <i class='bx bxs-file-image'></i>
-                  </span>
-                  <p class="drop-zoon__paragraph">Drop your file here or Click to browse</p>
-                  <span id="loadingText-pokemon2" class="drop-zoon__loading-text">Please Wait</span>
-                  <img src="" alt="Preview Image" id="previewImage-pokemon2" class="drop-zoon__preview-image" draggable="false">
-                  <label for="fileInput-pokemon2"></label>
-                  <input type="file" name="file2" id="fileInput-pokemon2" class="drop-zoon__file-input" accept=".png, .jpg, .jpeg">
-                </div>
-                <div id="fileDetails-pokemon2" class="upload-area__file-details file-details">
-                  <h3 class="file-details__title">Uploaded File</h3>
-                  <div id="uploadedFile-pokemon2" class="uploaded-file">
-                    <div class="uploaded-file__icon-container">
-                      <i class='bx bxs-file-blank uploaded-file__icon'></i>
-                      <span class="uploaded-file__icon-text-pokemon2"></span> <!-- Data Will be Comes From Js -->
-                    </div>
-                    <div id="uploadedFileInfo-pokemon2" class="uploaded-file__info">
-                      <span class="uploaded-file__name-pokemon2">Proejct 1</span>
-                      <span class="uploaded-file__counter-pokemon2">0%</span>
+                <div id="uploadArea-pokemon2" class="upload-area">
+                  <div class="upload-area__header">
+                    <h1 class="upload-area__title">Upload your second pokemon</h1>
+                    <p class="upload-area__paragraph">
+                      File should be an image in format jpeg, .png, .svg, .gif
+                    </p>
+                  </div>
+                  <div id="dropZoon-pokemon2" class="upload-area__drop-zoon drop-zoon">
+                    </span>
+                    <span id="loadingText-pokemon2" class="drop-zoon__loading-text">Please Wait</span>
+                    <img src="" alt="Preview Image" id="previewImage-pokemon2" class="drop-zoon__preview-image" draggable="false">
+                    <label for="fileInput-pokemon2"></label>
+                    <input type="file" name="file2" id="fileInput-pokemon2" class="drop-zoon__file-input" accept=".png, .jpg, .jpeg">
+                  </div>
+                  <div id="fileDetails-pokemon2" class="upload-area__file-details file-details">
+                    <h3 class="file-details__title">Uploaded File</h3>
+                    <div id="uploadedFile-pokemon2" class="uploaded-file">
+                      <div class="uploaded-file__icon-container">
+                        <i class='bxs-file-blank uploaded-file__icon'></i>
+                        <span class="uploaded-file__icon-text-pokemon2"></span> <!-- Data Will be Comes From Js -->
+                      </div>
+                      <div id="uploadedFileInfo-pokemon2" class="uploaded-file__info">
+                        <span class="uploaded-file__name-pokemon2">Proejct 1</span>
+                        <span class="uploaded-file__counter-pokemon2">0%</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-        </div>
-    </form>
-    <button type="button" class="btn btn-primary btn-lg" id="btn-predict">🪄🔮💥</button>
+          </div>
+      </form>
+        <button id="btn-predict" class="predict-button-wrapper">
+          <a class="skew-container">
+            <div class="o-pokeball c-loader u-bounce"></div>
+            <span class="skew">PREDICT</span>
+            <span class="arrow-svg skew">
+              <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                  <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                  <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                </g>
+              </svg>
+            </span>
+          </a>
+        </button>
+    </main>
     <!-- <center><div>
         <form id="upload-file" method="post" enctype="multipart/form-data">
             <label for="imageUpload" class="upload-label">
