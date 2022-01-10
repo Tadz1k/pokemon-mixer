@@ -19,6 +19,8 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: italic;
     width: 32rem;
     background-color: var(--clr-white);
     box-shadow: 0 10px 60px rgb(218, 229, 255);

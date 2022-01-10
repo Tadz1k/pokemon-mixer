@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
-
 // colors
 $blue: #3560ac;
 $darkblue: #2e318e;
@@ -22,8 +20,8 @@ $slideStudios: $animation-unit * 4;
 }
 
 .body-animation {
-	animation: zoomIn 1000ms;
-  }
+  animation: zoomIn 1000ms;
+}
 
 .wrapper {
 	height: 100vh;
@@ -56,7 +54,9 @@ $slideStudios: $animation-unit * 4;
 .skew-container {
     display: flex;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-style: italic;
 	padding: 15px 40px;
     font-size: 40px;
     color: #f2ca09;
