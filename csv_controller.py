@@ -56,8 +56,8 @@ def get_pokedex_data():
             output_data['speed'] = splitted_line[9]
             output_data['image'] = splitted_line[10]
             output_data['create-date'] = splitted_line[11]
-            output_data['parent1'] = splitted_line[12]
-            output_data['parent2'] = splitted_line[13]
+            output_data['parent1'] = splitted_line[12].strip()
+            output_data['parent2'] = splitted_line[13].strip()
             output_list.append(output_data)
     return tuple(output_list)
 
