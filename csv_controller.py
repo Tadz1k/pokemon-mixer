@@ -9,12 +9,26 @@ csv_file = f'{os.path.join(dir_path, "data", "pokemons.csv")}'
 
 
 def get_new_id():
+    #ta metoda zwracała błędy
+    #df = pd.read_csv(csv_file, sep=',')
+    #if len(df.index) == 0:      #jeśli nie ma danych w pliku csv, to id jest 0
+        #return -1               #dlatego bo dodaję +1 w kodzie
+    #else:
+        #return df['id'].max()   #jeśli są jakieś dane w pliku csv, to zwracam najwyższe id
+    max_id = 0
+    skip_header = False
+    with open(csv_file, 'r', newline='') as f:
+        csvreader = csv.reader(csv_file, delimiter=',')
+        for line in f:
+            if skip_header:
+                splitted_line = line.split(',')
+                if int(splitted_line[0]) > max_id:
+                    max_id = int(splitted_line[0])
+            elif not skip_header:
+                skip_header = True
 
-    df = pd.read_csv(csv_file, sep=',')
-    if len(df.index) == 0:      #jeśli nie ma danych w pliku csv, to id jest 0
-        return -1               #dlatego bo dodaję +1 w kodzie
-    else:
-        return df['id'].max()   #jeśli są jakieś dane w pliku csv, to zwracam najwyższe id
+        
+    return max_id
 
 def save_to_file(pokemon):
     data_list = []

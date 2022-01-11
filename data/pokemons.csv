@@ -1,37 +1,7 @@
 id,name,type,total,hp,attack,defense,speedattack,speeddefense,speed,image,create-date,parent1,parent2
-0,Mewkey,FIGHTING,317,40,57,40,34,39,107,https://images.alexonsager.net/pokemon/fused/151/151.56.png,10/01/2022 12:01:47,Mew,Mankey
-1,Lapkey,FIGHTING,327,35,92,63,21,40,76,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:04:07,Lapras,Mankey
-2,Lapkey,FIGHTING,291,31,69,68,43,29,51,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:08:32,Lapras,Mankey
-3,Lapkey,FIGHTING,420,40,88,31,90,117,54,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:10:21,Lapras,Mankey
-4,Lapkey,FIGHTING,413,149,66,71,36,39,52,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:10:28,Lapras,Mankey
-5,Lapkey,WATER ICE,388,124,58,61,36,49,60,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:10:54,Lapras,Mankey
-6,Lapkey,FIGHTING,342,25,70,68,101,40,38,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:11:23,Lapras,Mankey
-7,Lapkey,WATER ICE,386,101,72,45,67,61,40,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:11:37,Lapras,Mankey
-8,Lapkey,FIGHTING,412,48,84,86,63,95,36,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:11:51,Lapras,Mankey
-9,Lapkey,WATER ICE,506,166,100,72,35,68,65,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:12:43,Lapras,Mankey
-10,Lapkey,FIGHTING,350,33,82,64,90,45,36,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:14:50,Lapras,Mankey
-11,Lapkey,WATER ICE,524,137,102,91,96,36,62,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:15:43,Lapras,Mankey
-12,Lapkey,FIGHTING,437,94,82,24,99,56,82,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:16:52,Lapras,Mankey
-13,Lapkey,WATER ICE,421,156,88,40,27,57,53,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:17:04,Lapras,Mankey
-14,Lapkey,FIGHTING,591,162,88,97,74,106,64,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:18:56,Lapras,Mankey
-15,Lapkey,FIGHTING,404,33,74,72,73,100,52,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:19:20,Lapras,Mankey
-16,Lapkey,FIGHTING,440,117,95,44,103,41,40,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:19:34,Lapras,Mankey
-17,Lapkey,WATER ICE,416,118,72,31,68,90,37,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:19:59,Lapras,Mankey
-18,Lapkey,WATER ICE,437,146,99,23,79,34,56,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:20:22,Lapras,Mankey
-19,Lapkey,FIGHTING,357,87,83,23,44,48,72,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:22:07,Lapras,Mankey
-20,Lapkey,FIGHTING,443,153,59,49,64,49,69,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:22:37,Lapras,Mankey
-21,Lapkey,WATER ICE,343,113,71,26,42,36,55,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:22:54,Lapras,Mankey
-22,Lapkey,FIGHTING,436,51,85,96,92,51,61,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:23:12,Lapras,Mankey
-23,Lapkey,WATER ICE,351,35,72,83,44,67,50,https://images.alexonsager.net/pokemon/fused/131/131.56.png,10/01/2022 12:23:40,Lapras,Mankey
-24,Kabukey,ROCK WATER,366,51,88,103,41,50,33,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:24:20,Kabuto,Mankey
-25,Kabukey,FIGHTING,327,30,78,26,55,49,89,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:26:09,Kabuto,Mankey
-26,Kabukey,ROCK WATER,343,19,80,75,69,54,46,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:26:55,Kabuto,Mankey
-27,Kabukey,ROCK WATER,305,33,82,23,70,41,56,https://images.alexonsager.net/pokemon/fused/140/140.56.png,10/01/2022 12:27:38,Kabuto,Mankey
-28,Kabukarp,ROCK WATER,297,24,77,89,13,23,71,https://images.alexonsager.net/pokemon/fused/140/140.129.png,10/01/2022 12:28:55,Kabuto,Magikarp
-29,Horsdeen,WATER,302,22,32,63,70,61,54,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:47,Horsea,Goldeen
-30,Horsdeen,WATER,326,34,26,59,77,55,75,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:51,Horsea,Goldeen
-31,Horsdeen,WATER,269,35,39,77,34,46,38,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:52,Horsea,Goldeen
-32,Horsdeen,WATER,274,25,68,69,39,29,44,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:53,Horsea,Goldeen
-33,Horsdeen,WATER,330,28,67,61,55,45,74,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:54,Horsea,Goldeen
-34,Horsdeen,WATER,271,18,64,78,30,25,56,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:55,Horsea,Goldeen
-35,Horsdeen,WATER,344,24,71,46,90,50,63,https://images.alexonsager.net/pokemon/fused/116/116.118.png,10/01/2022 16:51:56,Horsea,Goldeen36,Exeggnair,GRASS,438,65,73,74,79,89,58,https://images.alexonsager.net/pokemon/fused/103/103.148.png,11/01/2022 12:02:01,Exeggutor,Dragonair,https://images.alexonsager.net/pokemon/103.png,https://images.alexonsager.net/pokemon/148.png
+0,Abkans,POISON,263,29,39,30,34,36,95,https://images.alexonsager.net/pokemon/fused/63/63.23.png,11/01/2022 13:24:36,Abra,Ekans,https://images.alexonsager.net/pokemon/63.png,https://images.alexonsager.net/pokemon/23.png
+1,Kakarp,WATER,259,51,23,62,16,15,92,https://images.alexonsager.net/pokemon/fused/14/14.129.png,11/01/2022 13:35:19,Kakuna,Magikarp,https://images.alexonsager.net/pokemon/14.png,https://images.alexonsager.net/pokemon/129.png
+1,Kakarp,BUG POISON,236,12,16,67,31,27,83,https://images.alexonsager.net/pokemon/fused/14/14.129.png,11/01/2022 13:36:37,Kakuna,Magikarp,https://images.alexonsager.net/pokemon/14.png,https://images.alexonsager.net/pokemon/129.png
+2,Kakarp,WATER,220,21,31,63,16,28,61,https://images.alexonsager.net/pokemon/fused/14/14.129.png,11/01/2022 13:39:48,Kakuna,Magikarp,https://images.alexonsager.net/pokemon/14.png,https://images.alexonsager.net/pokemon/129.png
+3,Horskarp,WATER,223,35,8,43,50,24,63,https://images.alexonsager.net/pokemon/fused/116/116.129.png,11/01/2022 13:40:08,Horsea,Magikarp,https://images.alexonsager.net/pokemon/116.png,https://images.alexonsager.net/pokemon/129.png
+4,Jynkarp,WATER,315,17,12,53,94,24,115,https://images.alexonsager.net/pokemon/fused/124/124.129.png,11/01/2022 13:40:28,Jynx,Magikarp,https://images.alexonsager.net/pokemon/124.png,https://images.alexonsager.net/pokemon/129.png
