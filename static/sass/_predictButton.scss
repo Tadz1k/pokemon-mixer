@@ -21,7 +21,7 @@
 }
 
 svg {
-    height: 35px;
+    height: 26px;
     width: 45px;
 }
 
@@ -63,4 +63,10 @@ path.two {
     100% {
         fill: white;
     }
+}
+
+.back-direction {
+    transform: rotateY(180deg);
+    position: relative;
+    top: -2px;
 }

@@ -16,7 +16,7 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
 })
 
 #Skomentuj jeśli nie robisz tego na windowsie
-pathlib.PosixPath = pathlib.WindowsPath
+# pathlib.PosixPath = pathlib.WindowsPath
 dir_path = os.path.dirname(os.path.realpath(__file__))
 model = f'{os.path.join(dir_path, "models", "densenet_201_87pc.pkl")}'
 
@@ -37,6 +37,14 @@ def index():
 @app.route('/home', methods=['GET'])
 def home():
     return render_template('home.html')
+
+@app.route('/battle', methods=['GET'])
+def battle():
+    return render_template('battle.html')
+
+@app.route('/pokedex', methods=['GET'])
+def pokedex():
+    return render_template('pokedex.html')
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
@@ -64,13 +72,14 @@ def upload():
             print('Te same pokemony!')
         else:
             pokemons_test = {}
-            pokemons_test[pokemons_data.get(pokemons[0])['name']] = pokemons_data.get(pokemons[0])
-            pokemons_test[pokemons_data.get(pokemons[1])['name']] = pokemons_data.get(pokemons[1])
+            pokemons_test['pokemon_parent1'] = pokemons_data.get(pokemons[0])
+            pokemons_test['pokemon_parent2'] = pokemons_data.get(pokemons[1])
+            print(pokemons_test)
             #pokemons_test.append(pokemons_data.get(pokemons[0]))
             #pokemons_test.append(pokemons_data.get(pokemons[1]))
             new_pokemon = stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
             #pokemons_test.append(new_pokemon)
-            pokemons_test[new_pokemon['name']] = new_pokemon
+            pokemons_test['pokemon_hybrid'] = new_pokemon
             return pokemons_test
     return None
 

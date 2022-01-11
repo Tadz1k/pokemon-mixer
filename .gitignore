@@ -1,7 +1,7 @@
 # exclude everything
 uploads/*
 # exception to the rule
-!uploads/.gitkeep 
+!uploads/.gitkeep
 
 static/css/*.scss.css
 static/css/*.scss.css.map
