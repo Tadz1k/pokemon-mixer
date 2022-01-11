@@ -16,7 +16,7 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
 })
 
 #Skomentuj jeśli nie robisz tego na windowsie
-pathlib.PosixPath = pathlib.WindowsPath
+#pathlib.PosixPath = pathlib.WindowsPath
 dir_path = os.path.dirname(os.path.realpath(__file__))
 model = f'{os.path.join(dir_path, "models", "densenet_201_87pc.pkl")}'
 
@@ -80,7 +80,6 @@ def upload():
             new_pokemon = stats_generator.generateNewPokemon(pokemons_data.get(pokemons[0]), pokemons_data.get(pokemons[1]))
             #pokemons_test.append(new_pokemon)
             pokemons_test['pokemon_hybrid'] = new_pokemon
-            print(new_pokemon)
             return pokemons_test
     return None
 
