@@ -69,7 +69,7 @@ $(document).ready(function () {
         }, 2000);
       },
       success: function (data) {
-              createPokemonCard(data.pokemon_parent1, 'pokemon_parent1', data.pokemon_hybrid.parent1_img);
+        createPokemonCard(data.pokemon_parent1, 'pokemon_parent1', data.pokemon_hybrid.parent1_img);
         createPokemonCard(data.pokemon_parent2, 'pokemon_parent2', data.pokemon_hybrid.parent2_img);
         createPokemonCard(data.pokemon_hybrid, 'pokemon_hybrid', data.pokemon_hybrid.image);
       }
