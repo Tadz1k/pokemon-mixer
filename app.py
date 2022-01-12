@@ -16,7 +16,7 @@ app.wsgi_app = SassMiddleware(app.wsgi_app, {
 })
 
 #Skomentuj jeśli nie robisz tego na windowsie
-pathlib.PosixPath = pathlib.WindowsPath
+# pathlib.PosixPath = pathlib.WindowsPath
 dir_path = os.path.dirname(os.path.realpath(__file__))
 model = f'{os.path.join(dir_path, "models", "densenet_201_87pc.pkl")}'
 
