@@ -9,6 +9,31 @@
     z-index:999;
   }
 
+  // rain animation
+  hr {
+    width: 50px;
+    border-color: transparent;
+    border-right-color: rgba(0, 0, 0, 0.7);
+    border-right-width: 50px;
+    position: absolute;
+    bottom: 100%;
+    transform-origin: 100% 50%;
+    animation-name: rain;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes rain {
+    from {
+      transform: rotate(75deg) translateX(0px);
+    }
+    to {
+      transform: rotate(75deg) translateX(calc(100vh + 20px));
+    }
+  }
+  
+
   .container {
     height: 90vh;
     width: 350px;
@@ -27,7 +52,7 @@
   }
 
   .parent-container {
-    height: 100vh;
+    height: 75vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -40,6 +65,7 @@
     padding: 30px 20px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
+    z-index: 2;
   }
   .pokemon_card_nameContainer {
     display: flex;
