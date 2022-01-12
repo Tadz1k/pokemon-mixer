@@ -96,7 +96,7 @@
       </form>
         <button id="btn-predict" class="predict-button-wrapper">
           <a class="skew-container">
-            <div class="o-pokeball c-loader u-bounce"></div>
+            <div class="o-pokeball-sm u-bounce"></div>
             <span class="skew">PREDICT</span>
             <span class="arrow-svg skew">
               <svg viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -110,7 +110,14 @@
           </a>
         </button>
     </main>
-    <div id="parents" class="modal">
+    <div id="pokeball-showup" class="modal wrapper">
+      <div id="pokeball-showup-item" class="o-pokeball-lg" style="animation: backInDown 2000ms"></div>
+      <h1 style="animation: pulse 1000ms infinite">Please wait for pokemon creation...</h1>
+    </div>
+    <div id="parents" class="modal" style="background-color: white;">
+      <h1 id="parents-question" style="animation: pulse 1000ms infinite; height:5vh;font-family:'Poppins',sans-serif;font-size:3.5rem;font-style:italic;z-index: 2;">
+        How will a new pokemon look like...?
+      </h1>
       <div class="parent-container">
         <div class="container">
           <div id="pokemon_parent1_card" class="pokemon_card">
@@ -255,7 +262,7 @@
             </svg>
           </span>
           <span class="skew">BACK</span>
-          <div class="o-pokeball c-loader u-bounce"></div>
+          <div class="o-pokeball-sm u-bounce"></div>
         </a>
       </button>
     </div>

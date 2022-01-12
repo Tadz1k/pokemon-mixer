@@ -1,13 +1,14 @@
-$pokeballSize: 50px;
-.o-pokeball {
-  width: $pokeballSize;
-  height: $pokeballSize;
-  border-radius: $pokeballSize;
-  border: solid ($pokeballSize/25) black;
-  position: relative;    
+$pokeballSize--sm: 50px;
+$pokeballSize--lg: 500px;
+
+@mixin pokeball($size) {
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  border: solid ($size/25) black;
+  position: relative;
   background: linear-gradient(to bottom, #EEEEEE 0%,#FFFFFF 100%);;
   margin: 10px auto;
-  transform: skewX(15deg);
 
   &:before,
   &:after{
@@ -22,28 +23,36 @@ $pokeballSize: 50px;
   }
 
   &:before {
-    width: $pokeballSize;
-    height: ($pokeballSize/2) -($pokeballSize/25/2);
-    border-bottom: solid ($pokeballSize/25) black;
-    border-radius: ($pokeballSize/2) ($pokeballSize/2) 0 0;
+    width: $size - 2*($size/25);
+    height: ($size/2) -($size/25/2);
+    border-bottom: solid ($size/25) black;
+    border-radius: ($size/2) ($size/2) 0 0;
     background: linear-gradient(to bottom, #d10000 0%,#ff0000 50%);
   }
 
   &:after {
     content: "";
-    width: $pokeballSize/5;
-    height: $pokeballSize/5;
+    width: $size/5;
+    height: $size/5;
     background: linear-gradient(to bottom, #fff 0%,#ccc 100%);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
-    box-shadow: 0 0 0 ($pokeballSize/50) black,
-                0 0 0 ($pokeballSize/25) #ddd,
-                0 0 0 ($pokeballSize/14) black,
-                0 0 ($pokeballSize/10) ($pokeballSize/17) rgba(0,0,0,0.4);
+    box-shadow: 0 0 0 ($size/50) black,
+                0 0 0 ($size/25) #ddd,
+                0 0 0 ($size/14) black,
+                0 0 ($size/10) ($size/17) rgba(0,0,0,0.4);
   }
+}
+
+.o-pokeball-sm {
+  @include pokeball($pokeballSize--sm);
+}
+
+.o-pokeball-lg {
+  @include pokeball($pokeballSize--lg);
 }
 
 // pokeball animations

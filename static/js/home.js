@@ -29,65 +29,78 @@ $(document).ready(function () {
       cache: false,
       processData: false,
       async: true,
+	        beforeSend: function(){
+        $('#pokeball-showup').addClass("pokeball-show");
+        $('#pokeball-showup').css('display', 'flex');
+        $('#pokeball-showup').css('flex-direction', 'column');
+        $('#pokeball-showup').css('align-items', 'center');
+        $('#pokeball-showup').css('justify-content', 'space-around');
+        $('#pokeball-showup').css('font-family', 'Poppins');
+        $('#pokeball-showup').css('font-size', '1.8rem');
+        $('#pokeball-showup').css('font-style', 'italic');
+        setTimeout(function () {
+          $('#pokeball-showup-item').css('animation', 'wobble 1500ms');
+          setTimeout(function () {
+            $('#pokeball-showup-item').css('animation', 'tada 1500ms');
+            setTimeout(function () {
+              $('#pokeball-showup-item').toggle("explode");
+              let hrElement;
+              for (let i = 0; i < 100; i++) {
+                  hrElement = document.createElement("hr");
+                  hrElement.style.left = Math.floor(Math.random() * window.innerWidth) - 150 + "px";
+                  hrElement.style.animationDuration = 0.2 + Math.random() * 0.3 + "s";
+                  hrElement.style.animationDelay = Math.random() * 5 + "s";
+                  $('#parents').append(hrElement);
+              }
+              $('#parents').css('display', 'flex');
+              $('#parents').css('flex-direction', 'column');
+              $('#parents').css('align-items', 'center');
+              $('#parents').css('justify-content', 'space-around');
+              $('#parents').fadeIn(1000);
+              $('#pokemon_parent1_card').css('animation', 'fadeInLeft 1500ms');
+              setTimeout(function () {
+                $('#pokemon_parent2_card').css('animation', 'fadeInRight 1500ms');
+                setTimeout(function () {
+                  $('#result').fadeIn(1000);
+                }, 1500)
+              }, 1500)
+            }, 1500)
+          }, 1500)
+        }, 2000);
+      },
       success: function (data) {
-        $('#result').fadeIn(600);
-        const parent1card = document.getElementById("pokemon_parent1_card");
-        const parent1CardThemeColor = typeColor[data.pokemon_parent1.type.toLowerCase()];
-        $('#pokemon_parent1_hp').text('HP ' + data.pokemon_parent1.hp);
-        $("#pokemon_parent1_img").attr("src",data.pokemon_parent1.image);
-        $('#pokemon_parent1_id').text(`#${data.pokemon_parent1.id}`);
-        $('#pokemon_parent1_name').text(data.pokemon_parent1.name);
-        $("#pokemon_parent1_attack").text(data.pokemon_parent1.attack);
-        $("#pokemon_parent1_defense").text(data.pokemon_parent1.defense);
-        $("#pokemon_parent1_speed").text(data.pokemon_parent1.speed);
-        $("#pokemon_parent1_speedattack").text(data.pokemon_parent1.speedattack);
-        $("#pokemon_parent1_speeddefense").text(data.pokemon_parent1.speeddefense);
-        $("#pokemon_parent1_total").text(data.pokemon_parent1.total);
-        $('#pokemon_parent1_type span').text(data.pokemon_parent1.type);
-        $('#pokemon_parent1_id').css('color', parent1CardThemeColor);
-        $('#pokemon_parent1_type span').css('background-color', parent1CardThemeColor);
-        parent1card.style.background = `radial-gradient(circle at 50% 0%, ${parent1CardThemeColor} 36%, #ffffff 36%)`;
-
-        const parent2card = document.getElementById("pokemon_parent2_card");
-        const parent2CardThemeColor = typeColor[data.pokemon_parent2.type.toLowerCase()];
-        $('#pokemon_parent2_hp').text('HP ' + data.pokemon_parent2.hp);
-        $("#pokemon_parent2_img").attr("src",data.pokemon_parent2.image);
-        $('#pokemon_parent2_id').text(`#${data.pokemon_parent2.id}`);
-        $('#pokemon_parent2_name').text(data.pokemon_parent2.name);
-        $("#pokemon_parent2_attack").text(data.pokemon_parent2.attack);
-        $("#pokemon_parent2_defense").text(data.pokemon_parent2.defense);
-        $("#pokemon_parent2_speed").text(data.pokemon_parent2.speed);
-        $("#pokemon_parent2_speedattack").text(data.pokemon_parent2.speedattack);
-        $("#pokemon_parent2_speeddefense").text(data.pokemon_parent2.speeddefense);
-        $("#pokemon_parent2_total").text(data.pokemon_parent2.total);
-        $('#pokemon_parent2_type span').text(data.pokemon_parent2.type);
-        $('#pokemon_parent2_id').css('color', parent2CardThemeColor);
-        $('#pokemon_parent2_type span').css('background-color', parent2CardThemeColor);
-        parent2card.style.background = `radial-gradient(circle at 50% 0%, ${parent2CardThemeColor} 36%, #ffffff 36%)`;
-
-
-        const hybridcard = document.getElementById("pokemon_hybrid_card");
-        const hybridCardThemeColor = typeColor[data.pokemon_hybrid.type.toLowerCase()];
-        $('#pokemon_hybrid_hp').text('HP ' + data.pokemon_hybrid.hp);
-        $("#pokemon_hybrid_img").attr("src",data.pokemon_hybrid.image);
-        $('#pokemon_hybrid_id').text(`#${data.pokemon_hybrid.id}`);
-        $('#pokemon_hybrid_name').text(data.pokemon_hybrid.name);
-        $("#pokemon_hybrid_attack").text(data.pokemon_hybrid.attack);
-        $("#pokemon_hybrid_defense").text(data.pokemon_hybrid.defense);
-        $("#pokemon_hybrid_speed").text(data.pokemon_hybrid.speed);
-        $("#pokemon_hybrid_speedattack").text(data.pokemon_hybrid.speedattack);
-        $("#pokemon_hybrid_speeddefense").text(data.pokemon_hybrid.speeddefense);
-        $("#pokemon_hybrid_total").text(data.pokemon_hybrid.total);
-        $('#pokemon_hybrid_type span').text(data.pokemon_hybrid.type);
-        $('#pokemon_hybrid_id').css('color', hybridCardThemeColor);
-        $('#pokemon_hybrid_type span').css('background-color', hybridCardThemeColor);
-        hybridcard.style.background = `radial-gradient(circle at 50% 0%, ${hybridCardThemeColor} 36%, #ffffff 36%)`;
+              createPokemonCard(data.pokemon_parent1, 'pokemon_parent1', data.pokemon_hybrid.parent1_img);
+        createPokemonCard(data.pokemon_parent2, 'pokemon_parent2', data.pokemon_hybrid.parent2_img);
+        createPokemonCard(data.pokemon_hybrid, 'pokemon_hybrid', data.pokemon_hybrid.image);
       }
     });
   });
+  
   $('#btn-back').click(function () {
-        $('#result').fadeOut(1000);
+    $('#pokeball-showup').css('display', 'none');
+    $('#parents').css('display', 'none');
+    $('#result').fadeOut(1000);
   });
+  
+  function createPokemonCard(element, element_string, img_name) {
+    const {hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type} = element;
+    const card = document.getElementById(`${element_string}_card`);
+    const cardThemeColor = typeColor[type.toLowerCase()];
+    $(`#${element_string}_hp`).text('HP ' + hp);
+    $(`#${element_string}_img`).attr("src", img_name);
+    $(`#${element_string}_id`).text(`#${id}`);
+    $(`#${element_string}_name`).text(name);
+    $(`#${element_string}_attack`).text(attack);
+    $(`#${element_string}_defense`).text(defense);
+    $(`#${element_string}_speed`).text(speed);
+    $(`#${element_string}_speedattack`).text(speedattack);
+    $(`#${element_string}_speeddefense`).text(speeddefense);
+    $(`#${element_string}_total`).text(total);
+    $(`#${element_string}_type span`).text(type);
+    $(`#${element_string}_id`).css('color', cardThemeColor);
+    $(`#${element_string}_type span`).css('background-color', cardThemeColor);
+    card.style.background = `radial-gradient(circle at 50% 0%, ${cardThemeColor} 36%, #ffffff 36%)`;
+  }
   const imagesTypes = [
     "jpeg",
     "png",
