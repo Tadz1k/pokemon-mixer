@@ -77,3 +77,6 @@ def get_pokedex_data():
     return output_list
 
 
+print(get_pokedex_data())
+
+
