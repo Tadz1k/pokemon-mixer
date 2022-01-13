@@ -8,13 +8,36 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,i900" rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/header.scss.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/home.scss.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/uploadfile.css') }}" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/home.js') }}" type="text/javascript"></script>
+    <script>
+    $(document).ready(function () {
+    const typeColor = {
+        bug: "#26de81",
+        dragon: "#ffeaa7",
+        electric: "#fed330",
+        fairy: "#FF0069",
+        fighting: "#30336b",
+        fire: "#f0932b",
+        flying: "#81ecec",
+        grass: "#00b894",
+        ground: "#EFB549",
+        ghost: "#a55eea",
+        ice: "#74b9ff",
+        normal: "#95afc0",
+        poison: "#6c5ce7",
+        psychic: "#a29bfe",
+        rock: "#2d3436",
+        water: "#0190FF",
+    };
+    const findBackgroundColor = (type) => console.log('aaa')
+    });
+    </script>
 </head>
-<body>
+<body style="overflow: scroll;">
     <header class="header">
         <div>
           <a href="/home">
@@ -32,7 +55,49 @@
             </ul>
         </nav>
     </header>
-    <main class="column-container mainContainer">
-    </main>
+    <div class="pokemon_card_gallery_container">
+        {% for value in pokemons %}
+        {% set bgColor = typeColor.get(value.type.lower().split()[0]) %}
+            <div id="pokemon_{{value.name}}_{{loop.index}}_card" class="pokemon_card_gallery" style="background: radial-gradient(circle at 50% 0%, {{bgColor}} 50%, #ffffff 51%)">
+                <p id="pokemon_{{value.name}}_{{loop.index}}_hp" class="pokemon_card_hp">HP {{value.hp}}</p>
+                <img id="pokemon_{{value.image}}_{{loop.index}}_id" class="pokemon_card_gallery--image" src="{{value.image}}" />
+                <div class="pokemon_card_gallery_nameContainer">
+                    <span id="pokemon_{{value.name}}_{{loop.index}}_id" class="pokemon_card__gallery_id">#{{value.id}}</span>
+                    <span id="pokemon_{{value.name}}_{{loop.index}}_name" class="pokemon_card_name">Bulbchu</span>
+                </div>
+                <div id="pokemon_{{value.name}}_{{loop.index}}_type" class="pokemon_card_gallery_type">
+                    <span>{{value.type}}</span>
+                </div>
+                <div class="pokemon_card_stats_row">
+                    <div>
+                        <p>Attack</p>
+                        <h3 id="pokemon_{{value.name}}_{{loop.index}}_attack" class="pokemon_card_property">{{value.attack}}</h3>
+                    </div>
+                    <div>
+                        <p>Defense</p>
+                        <h3 id="pokemon_{{value.name}}_{{loop.index}}_defense" class="pokemon_card_property">{{value.defense}}</h3>
+                    </div>
+                    <div>
+                        <p>Speed</p>
+                        <h3 id="pokemon_{{value.name}}_{{loop.index}}_speed" class="pokemon_card_property">{{value.speed}}</h3>
+                    </div>
+                </div>
+                <div class="pokemon_card_stats_row pokemon_card_stats_row_gallery--space-evenly">
+                    <div>
+                    <p>Speed Attack</p>
+                    <h3 id="pokemon_{{value.name}}_{{loop.index}}_speedattack" class="pokemon_card_property">{{value.speedattack}}</h3>
+                    </div>
+                    <div>
+                    <p>Speed Defense</p>
+                    <h3 id="pokemon_{{value.name}}_{{loop.index}}_speeddefense" class="pokemon_card_property">{{value.speeddefense}}</h3>
+                    </div>
+                </div>
+                <div class="pokemon_card_stats_row pokemon_card_stats_row_gallery--total">
+                    <p class="pokemon_card_property_total--heading">Total</p>
+                    <h3 id="pokemon_{{value.name}}_{{loop.index}}_total" class="pokemon_card_property_total--value">{{value.total}}</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

@@ -82,6 +82,3 @@ def generateNewPokemon(stats1, stats2):
 
 
     return stats
-
-
-
