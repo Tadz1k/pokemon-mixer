@@ -53,7 +53,8 @@ def get_pokemon_by_id(pokemonid):
 def get_pokedex_data():
     output_list = []
     with open(csv_file, 'r', newline='') as f:
-        for line in f:
+        lines = f.readlines()[1:]
+        for line in lines:
             output_data = {'id':'', 'name':'', 'type':'', 'total':'', 'hp':'', 'attack':'', 'defense':'', 'speedattack':'', 'speeddefense':'', 'speed':'', 'image':'', 'create-date':'', 'parent1':'', 'parent2':''}
             splitted_line = line.split(',')
             output_data['id'] = splitted_line[0]
@@ -73,6 +74,6 @@ def get_pokedex_data():
             output_data['parent1'] = splitted_line[12].strip()
             output_data['parent2'] = splitted_line[13].strip()
             output_list.append(output_data)
-    return tuple(output_list)
+    return output_list
 
 

@@ -31,8 +31,7 @@
       transform: rotate(75deg) translateX(calc(100vh + 20px));
     }
   }
-  
-  
+
   .container {
     height: 90vh;
     width: 350px;
@@ -135,5 +134,61 @@
   }
   .pokemon_card_property_total--value {
     font-size: 20px;
+    margin-top: 5px;
+  }
+
+  //gallery
+  .pokemon_card_gallery_container {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .pokemon_card_gallery {
+    position: relative;
+    width: 350px;
+    padding: 20px 20px;
+    box-shadow: 0 20px 30px #00000026;
+    border-radius: 10px;
+    z-index: 2;
+    height: 350px;
+    margin-top: 30px;
+  }
+
+  .pokemon_card_gallery--image {
+    display: block;
+    width: 180px;
+    position: relative;
+    margin: -55px 70px;
+    height: 180px;
+    top: -10px;
+  }
+
+  .pokemon_card_gallery_nameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .pokemon_card__gallery_id {
+    padding: 0 5px;
+    color: black;
+  }
+
+  .pokemon_card_gallery_type {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+  }
+
+  .pokemon_card_stats_row_gallery--space-evenly {
+    justify-content: space-evenly;
+    margin-top: 15px;
+  }
+
+  .pokemon_card_stats_row_gallery--total {
+    flex-direction: column;
+    justify-content: center;
     margin-top: 5px;
   }
