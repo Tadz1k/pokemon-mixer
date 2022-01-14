@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('a.start-journey').click(function(){
-        var url = $(this).attr('href');
+        let url = $(this).attr('href');
         $('body').fadeOut(1000, function() {
             $('.wrapper').remove();
             $('body').css('background-image', 'none');

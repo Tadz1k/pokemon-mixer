@@ -13,41 +13,19 @@
     <link href="{{ url_for('static', filename='css/header.scss.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/home.scss.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/uploadfile.css') }}" rel="stylesheet">
-    <script>
-    $(document).ready(function () {
-    const typeColor = {
-        bug: "#26de81",
-        dragon: "#ffeaa7",
-        electric: "#fed330",
-        fairy: "#FF0069",
-        fighting: "#30336b",
-        fire: "#f0932b",
-        flying: "#81ecec",
-        grass: "#00b894",
-        ground: "#EFB549",
-        ghost: "#a55eea",
-        ice: "#74b9ff",
-        normal: "#95afc0",
-        poison: "#6c5ce7",
-        psychic: "#a29bfe",
-        rock: "#2d3436",
-        water: "#0190FF",
-    };
-    const findBackgroundColor = (type) => console.log('aaa')
-    });
-    </script>
+    <script src="{{ url_for('static', filename='js/pokedex.js') }}" type="text/javascript"></script>
 </head>
-<body style="overflow: scroll;">
+<body style="overflow: scroll;" class="body-animation">
     <header class="header">
         <div>
-          <a href="/home">
+          <a href="/home" id="homeLink">
             <img class="pokemonLogo" src="{{ url_for('static', filename='photos/pokemonlogo.png') }}" height="69" width="188"/>
           </a>
         </div>
         <nav class="headerMenu">
             <ul class="headerMenu__list">
                 <li class="headerMenu__listItem">
-                    <a class="skew-container headerMenu__listItemLink" href="/battle" style="font-size: 22px;">Battle 1vs1</a>
+                    <a id="battleLink" class="skew-container headerMenu__listItemLink" href="/battle" style="font-size: 22px;">Battle 1vs1</a>
                 </li>
                 <li class="headerMenu__listItem">
                     <a class="skew-container headerMenu__listItemLink" href="#" style="font-size: 22px;">Pokedex</a>

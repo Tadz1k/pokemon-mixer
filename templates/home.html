@@ -25,10 +25,10 @@
         <nav class="headerMenu">
             <ul class="headerMenu__list">
                 <li class="headerMenu__listItem">
-                    <a class="skew-container headerMenu__listItemLink" href="/battle" style="font-size: 22px;">Battle 1vs1</a>
+                    <a id="battleLink" class="skew-container headerMenu__listItemLink" href="/battle" style="font-size: 22px;">Battle 1vs1</a>
                 </li>
                 <li class="headerMenu__listItem">
-                    <a class="skew-container headerMenu__listItemLink" href="/pokedex" style="font-size: 22px;">Pokedex</a>
+                    <a id="pokedexLink" class="skew-container headerMenu__listItemLink" href="/pokedex" style="font-size: 22px;">Pokedex</a>
                 </li>
             </ul>
         </nav>
@@ -94,7 +94,7 @@
                 </div>
           </div>
       </form>
-        <button id="btn-predict" class="predict-button-wrapper">
+        <button id="btn-predict" class="predict-button-wrapper" disabled>
           <a class="skew-container">
             <div class="o-pokeball-sm u-bounce"></div>
             <span class="skew">PREDICT</span>
