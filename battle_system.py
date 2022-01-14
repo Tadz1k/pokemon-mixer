@@ -5,6 +5,8 @@ import random
 def get_winner(id_pokemon1, id_pokemon2):
     pokemon1 = csv_controller.get_pokemon_by_id(id_pokemon1)
     pokemon2 = csv_controller.get_pokemon_by_id(id_pokemon2)
+    print(pokemon1)
+    print(pokemon2)
     #grass, fire, flying, water, bug, poison, normal, dark, electric, psychic, ground, ice, steel, fairy, rock, ghost, fighting, dragon
 
     #kontry
@@ -43,15 +45,12 @@ def get_winner(id_pokemon1, id_pokemon2):
     # 8 - SpeedDefense
     # 9 - Speed
 
-    #analiza danych pokemonów 
-    if pokemon1[1] > pokemon2[1] : pokemon1_win_rate += 7
-    elif pokemon1[1] < pokemon2[1] : pokemon2_win_rate += 7
-    
-    pokemon1_types = pokemon1[2].split(' ')
-    pokemon2_types = pokemon2[2].split(' ')
+    #analiza danych pokemonów
+    if pokemon1['name'] > pokemon2['name'] : pokemon1_win_rate += 7
+    elif pokemon1['name'] < pokemon2['name'] : pokemon2_win_rate += 7
 
-    print(pokemon1_types)
-    print(pokemon2_types)
+    pokemon1_types = pokemon1['type'].split(' ')
+    pokemon2_types = pokemon2['type'].split(' ')
 
     #jeśli pokemon1 ma więcej niż jeden żywioł
     if len(pokemon1_types) > 1:
@@ -79,20 +78,20 @@ def get_winner(id_pokemon1, id_pokemon2):
             pokemon1_win_rate = pokemon1_win_rate * 1.05
         if pokemon2_types[0].lower() in counters.get(pokemon1_types[0].lower()):
             pokemon2_win_rate = pokemon2_win_rate * 1.05
-    
+
     #obliczanie poszczególnych statystyk
 
     #czy atak jest większy niż obrona
-    if int(pokemon1[5]) > int(pokemon2[6]) : pokemon1_win_rate = pokemon1_win_rate * 1.05
-    if int(pokemon2[5]) > int(pokemon1[6]) : pokemon2_win_rate = pokemon2_win_rate * 1.05
+    if int(pokemon1['attack']) > int(pokemon2['defense']) : pokemon1_win_rate = pokemon1_win_rate * 1.05
+    if int(pokemon2['attack']) > int(pokemon1['defense']) : pokemon2_win_rate = pokemon2_win_rate * 1.05
 
     #czy speedattack jest większy niż speeddefense
-    if int(pokemon1[7]) > int(pokemon2[8]) : pokemon1_win_rate = pokemon1_win_rate * 1.05
-    if int(pokemon2[7]) > int(pokemon2[8]) : pokemon2_win_rate = pokemon2_win_rate * 1.05
+    if int(pokemon1['speedattack']) > int(pokemon2['speeddefense']) : pokemon1_win_rate = pokemon1_win_rate * 1.05
+    if int(pokemon2['speedattack']) > int(pokemon2['speeddefense']) : pokemon2_win_rate = pokemon2_win_rate * 1.05
 
     #jeśli atak jest większy niż hp i większy niż obrona
-    if int(pokemon1[5]) > int(pokemon2[6]) + int(pokemon2[4]): pokemon1_win_rate = pokemon1_win_rate * 1.10
-    if int(pokemon2[5]) > int(pokemon1[6]) + int(pokemon1[4]): pokemon2_win_rate = pokemon2_win_rate * 1.10
+    if int(pokemon1['attack']) > int(pokemon2['defense']) + int(pokemon2['hp']): pokemon1_win_rate = pokemon1_win_rate * 1.10
+    if int(pokemon2['attack']) > int(pokemon1['defense']) + int(pokemon1['hp']): pokemon2_win_rate = pokemon2_win_rate * 1.10
 
     if pokemon1_win_rate > pokemon2_win_rate : return tuple([id_pokemon1, pokemon1, pokemon1_win_rate])
     if pokemon2_win_rate > pokemon1_win_rate : return tuple([id_pokemon2, pokemon2, pokemon2_win_rate])
@@ -103,8 +102,3 @@ def get_winner(id_pokemon1, id_pokemon2):
             return tuple([id_pokemon1, pokemon1, pokemon1_win_rate])
         else :
             return tuple([id_pokemon2, pokemon2, pokemon2_win_rate])
-
-
-print(get_winner(10, 10))
-
-

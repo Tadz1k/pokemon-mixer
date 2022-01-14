@@ -29,7 +29,7 @@ $(document).ready(function () {
       cache: false,
       processData: false,
       async: true,
-	        beforeSend: function(){
+	    beforeSend: function(){
         $('#pokeball-showup').addClass("pokeball-show");
         $('#pokeball-showup').css('display', 'flex');
         $('#pokeball-showup').css('flex-direction', 'column');
@@ -75,13 +75,31 @@ $(document).ready(function () {
       }
     });
   });
-  
+
   $('#btn-back').click(function () {
     $('#pokeball-showup').css('display', 'none');
     $('#parents').css('display', 'none');
     $('#result').fadeOut(1000);
   });
-  
+
+  $('#pokedexLink').click(function(){
+    let url = $(this).attr('href');
+    $('body').css('animation', 'backOutRight 3000ms');
+    setTimeout(function() {
+        document.location.href = url;
+    }, 1000);
+    return false;
+  });
+
+  $('#battleLink').click(function(){
+    let url = $(this).attr('href');
+    $('body').css('animation', 'backOutRight 3000ms');
+    setTimeout(function() {
+        document.location.href = url;
+    }, 1000);
+    return false;
+  });
+
   function createPokemonCard(element, element_string, img_name) {
     const {hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type} = element;
     const card = document.getElementById(`${element_string}_card`);
