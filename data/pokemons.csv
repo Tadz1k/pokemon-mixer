@@ -1,4 +1,4 @@
-id,name,type,total,hp,attack,defense,speedattack,speeddefense,speed,image,create-date,parent1,parent2
+id,name,type,total,hp,attack,defense,speedattack,speeddefense,speed,image,create-date,parent1,parent2, parent1_image, parent2_image
 0,Abkans,POISON,263,29,39,30,34,36,95,https://images.alexonsager.net/pokemon/fused/63/63.23.png,11/01/2022 13:24:36,Abra,Ekans,https://images.alexonsager.net/pokemon/63.png,https://images.alexonsager.net/pokemon/23.png
 1,Kakarp,WATER,259,51,23,62,16,15,92,https://images.alexonsager.net/pokemon/fused/14/14.129.png,11/01/2022 13:35:19,Kakuna,Magikarp,https://images.alexonsager.net/pokemon/14.png,https://images.alexonsager.net/pokemon/129.png
 2,Kakarp,BUG POISON,236,12,16,67,31,27,83,https://images.alexonsager.net/pokemon/fused/14/14.129.png,11/01/2022 13:36:37,Kakuna,Magikarp,https://images.alexonsager.net/pokemon/14.png,https://images.alexonsager.net/pokemon/129.png
@@ -13,3 +13,8 @@ id,name,type,total,hp,attack,defense,speedattack,speeddefense,speed,image,create
 11,Bulbchu,GRASS,265,26,39,38,42,81,39,https://images.alexonsager.net/pokemon/fused/1/1.25.png,14/01/2022 22:36:39,Bulbasaur,Pikachu,https://images.alexonsager.net/pokemon/1.png,https://images.alexonsager.net/pokemon/25.png
 12,Bulbchu,ELECTRIC,264,35,55,62,37,32,43,https://images.alexonsager.net/pokemon/fused/1/1.25.png,14/01/2022 22:50:00,Bulbasaur,Pikachu,https://images.alexonsager.net/pokemon/1.png,https://images.alexonsager.net/pokemon/25.png
 13,Bulbchu,ELECTRIC,322,54,45,38,44,48,93,https://images.alexonsager.net/pokemon/fused/1/1.25.png,14/01/2022 22:55:58,Bulbasaur,Pikachu,https://images.alexonsager.net/pokemon/1.png,https://images.alexonsager.net/pokemon/25.png
+14,Pikabasaur,GRASS,255,36,38,39,50,44,48,https://images.alexonsager.net/pokemon/fused/25/25.1.png,15/01/2022 00:37:03,Pikachu,Bulbasaur,https://images.alexonsager.net/pokemon/25.png,https://images.alexonsager.net/pokemon/1.png
+15,Bulbchu,ELECTRIC,302,45,51,55,64,53,34,https://images.alexonsager.net/pokemon/fused/1/1.25.png,15/01/2022 12:24:49,Bulbasaur,Pikachu,https://images.alexonsager.net/pokemon/1.png,https://images.alexonsager.net/pokemon/25.png
+16,Pikabasaur,ELECTRIC,293,35,59,55,30,63,51,https://images.alexonsager.net/pokemon/fused/25/25.1.png,15/01/2022 12:38:37,Pikachu,Bulbasaur,https://images.alexonsager.net/pokemon/25.png,https://images.alexonsager.net/pokemon/1.png
+17,Bulbchu,GRASS,347,48,69,35,50,57,88,https://images.alexonsager.net/pokemon/fused/1/1.25.png,15/01/2022 16:31:35,Bulbasaur,Pikachu,https://images.alexonsager.net/pokemon/1.png,https://images.alexonsager.net/pokemon/25.png
+18,Pikabasaur,ELECTRIC,319,36,47,32,56,58,90,https://images.alexonsager.net/pokemon/fused/25/25.1.png,15/01/2022 16:35:11,Pikachu,Bulbasaur,https://images.alexonsager.net/pokemon/25.png,https://images.alexonsager.net/pokemon/1.png

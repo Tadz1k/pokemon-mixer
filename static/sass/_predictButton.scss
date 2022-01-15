@@ -9,6 +9,52 @@
   border: 1px solid transparent;
 }
 
+.predict-button-wrapper:disabled {
+    cursor: auto;
+}
+
+.skew-container:hover {
+    transition: none;
+    box-shadow: 6px 6px 0 black;
+}
+
+.predict-button-wrapper:disabled .skew-container {
+    color: #8d8c87;
+    background: #3c3e41;
+}
+
+.predict-button-wrapper:disabled .u-bounce {
+    animation: none;
+}
+
+.predict-button-wrapper:disabled .skew-container:hover path.three {
+    animation: none;
+    transition: none;
+}
+
+.predict-button-wrapper:disabled .skew-container:hover path.one {
+    animation: none;
+    transition: none;
+    transform: translateX(-60%);
+}
+
+.predict-button-wrapper:disabled .skew-container:hover path.two {
+    animation: none;
+    transition: none;
+    transform: translateX(-30%);
+}
+
+
+.predict-button-wrapper:disabled .o-pokeball-sm:before {
+    background: #3c3e41;
+}
+
+.predict-button-wrapper:disabled .skew-container span:nth-child(2) {
+    transition: none;
+    margin-right: 0;
+    padding-left: 0;
+}
+
 .skew {
     transform: skewX(15deg);
 }

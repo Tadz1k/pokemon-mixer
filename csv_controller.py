@@ -26,8 +26,6 @@ def get_new_id():
                     max_id = int(splitted_line[0])
             elif not skip_header:
                 skip_header = True
-
-        
     return max_id
 
 def save_to_file(pokemon):

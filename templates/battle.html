@@ -27,7 +27,9 @@
         <nav class="headerMenu">
             <ul class="headerMenu__list">
                 <li class="headerMenu__listItem">
-                    <a class="skew-container headerMenu__listItemLink" href="#" style="font-size: 22px;">Battle 1vs1</a>
+                    <a class="skew-container headerMenu__listItemLink" href="#" style="font-size: 22px;">
+                      <span class="skew">Battle 1vs1</span>
+                    </a>
                 </li>
                 <li class="headerMenu__listItem">
                     <a id="pokedexLink" class="skew-container headerMenu__listItemLink" href="/pokedex" style="font-size: 22px;">Pokedex</a>
@@ -149,6 +151,99 @@
     <div id="pokeball-showup" class="modal wrapper">
         <div id="pokeball-showup-item" class="o-pokeball-lg" style="animation: backInDown 2000ms"></div>
         <h1 style="animation: pulse 1000ms infinite">Who's gonna win the fight...? 🥊🥊🥊</h1>
+    </div>
+    <div id="parents" class="modal" style="background-color: white;">
+      <h1 id="parents-question" style="animation: pulse 1000ms infinite; height:5vh;font-family:'Poppins',sans-serif;font-size:3.5rem;font-style:italic;z-index: 2;">
+          Which pokemon turns out to be stronger...?
+      </h1>
+      <div class="parent-container">
+        <div class="container">
+          <div id="pokemon_parent1_card" class="pokemon_card">
+            <p id="pokemon_parent1_hp" class="pokemon_card_hp">
+              <span></span>
+            </p>
+            <img id="pokemon_parent1_img" class="pokemon_card_image"/>
+            <div class="pokemon_card_nameContainer">
+              <span id="pokemon_parent1_id" class="pokemon_card_id"></span>
+              <span id="pokemon_parent1_name" class="pokemon_card_name"></span>
+            </div>
+            <div id="pokemon_parent1_type" class="pokemon_card_type">
+              <span></span>
+            </div>
+            <div class="pokemon_card_stats_row">
+              <div>
+                <p>Attack</p>
+                <h3 id="pokemon_parent1_attack" class="pokemon_card_property"></h3>
+              </div>
+              <div>
+                <p>Defense</p>
+                <h3 id="pokemon_parent1_defense" class="pokemon_card_property"></h3>
+              </div>
+              <div>
+                <p>Speed</p>
+                <h3 id="pokemon_parent1_speed" class="pokemon_card_property"></h3>
+              </div>
+            </div>
+            <div class="pokemon_card_stats_row pokemon_card_stats_row--space-evenly">
+              <div>
+                <p>Speed Attack</p>
+                <h3 id="pokemon_parent1_speedattack" class="pokemon_card_property"></h3>
+              </div>
+              <div>
+                <p>Speed Defense</p>
+                <h3 id="pokemon_parent1_speeddefense" class="pokemon_card_property"></h3>
+              </div>
+            </div>
+            <div class="pokemon_card_stats_row pokemon_card_stats_row--total">
+              <p class="pokemon_card_property_total--heading">Total</p>
+              <h3 id="pokemon_parent1_total" class="pokemon_card_property_total--value"></h3>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div id="pokemon_parent2_card" class="pokemon_card">
+            <p id="pokemon_parent2_hp" class="pokemon_card_hp">
+              <span></span>
+            </p>
+            <img id="pokemon_parent2_img" class="pokemon_card_image"/>
+            <div class="pokemon_card_nameContainer">
+              <span id="pokemon_parent2_id" class="pokemon_card_id"></span>
+              <span id="pokemon_parent2_name" class="pokemon_card_name"></span>
+            </div>
+            <div id="pokemon_parent2_type" class="pokemon_card_type">
+              <span></span>
+            </div>
+            <div class="pokemon_card_stats_row">
+              <div>
+                <p>Attack</p>
+                <h3 id="pokemon_parent2_attack" class="pokemon_card_property"></h3>
+              </div>
+              <div>
+                <p>Defense</p>
+                <h3 id="pokemon_parent2_defense" class="pokemon_card_property"></h3>
+              </div>
+              <div>
+                <p>Speed</p>
+                <h3 id="pokemon_parent2_speed" class="pokemon_card_property"></h3>
+              </div>
+            </div>
+            <div class="pokemon_card_stats_row pokemon_card_stats_row--space-evenly">
+              <div>
+                <p>Speed Attack</p>
+                <h3 id="pokemon_parent2_speedattack" class="pokemon_card_property"></h3>
+              </div>
+              <div>
+                <p>Speed Defense</p>
+                <h3 id="pokemon_parent2_speeddefense" class="pokemon_card_property"></h3>
+              </div>
+            </div>
+            <div class="pokemon_card_stats_row pokemon_card_stats_row--total">
+              <p class="pokemon_card_property_total--heading">Total</p>
+              <h3 id="pokemon_parent2_total" class="pokemon_card_property_total--value"></h3>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="result" class="modal">
       <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-around;">

@@ -51,14 +51,10 @@
                     <input type="file" name="file1" id="fileInput-pokemon1" class="drop-zoon__file-input" accept=".png, .jpg, .jpeg">
                   </div>
                   <div id="fileDetails-pokemon1" class="upload-area__file-details file-details">
-                    <h3 class="file-details__title">Uploaded File</h3>
+                    <h3 id="fileDetails-pokemon1-uploaded" class="file-details__title">File uploaded!</h3>
                     <div id="uploadedFile-pokemon1" class="uploaded-file">
-                      <div class="uploaded-file__icon-container">
-                        <i class='bxs-file-blank uploaded-file__icon'></i>
-                        <span class="uploaded-file__icon-text-pokemon1"></span> <!-- Data Will be Comes From Js -->
-                      </div>
                       <div id="uploadedFileInfo-pokemon1" class="uploaded-file__info">
-                        <span class="uploaded-file__name-pokemon1">Proejct 1</span>
+                        <span class="uploaded-file__name-pokemon1">Pokemon 1 - </span>
                         <span class="uploaded-file__counter-pokemon1">0%</span>
                       </div>
                     </div>
@@ -79,14 +75,14 @@
                     <input type="file" name="file2" id="fileInput-pokemon2" class="drop-zoon__file-input" accept=".png, .jpg, .jpeg">
                   </div>
                   <div id="fileDetails-pokemon2" class="upload-area__file-details file-details">
-                    <h3 class="file-details__title">Uploaded File</h3>
+                    <h3 id="fileDetails-pokemon2-uploaded" class="file-details__title">File uploaded!</h3>
                     <div id="uploadedFile-pokemon2" class="uploaded-file">
                       <div class="uploaded-file__icon-container">
                         <i class='bxs-file-blank uploaded-file__icon'></i>
                         <span class="uploaded-file__icon-text-pokemon2"></span> <!-- Data Will be Comes From Js -->
                       </div>
                       <div id="uploadedFileInfo-pokemon2" class="uploaded-file__info">
-                        <span class="uploaded-file__name-pokemon2">Proejct 1</span>
+                        <span class="uploaded-file__name-pokemon2">Pokemon 2 - </span>
                         <span class="uploaded-file__counter-pokemon2">0%</span>
                       </div>
                     </div>
@@ -94,7 +90,7 @@
                 </div>
           </div>
       </form>
-        <button id="btn-predict" class="predict-button-wrapper">
+        <button id="btn-predict" class="predict-button-wrapper" disabled>
           <a class="skew-container">
             <div class="o-pokeball-sm u-bounce"></div>
             <span class="skew">PREDICT</span>

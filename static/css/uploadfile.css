@@ -64,7 +64,7 @@
     flex-direction: column;
     border: 2px dashed var(--clr-light-blue);
     border-radius: 15px;
-    margin-top: 2.1875rem;
+    margin-top: 1rem;
     cursor: pointer;
     transition: border-color 300ms ease-in-out;
     background: url('../photos/pokemoncard.jpg') no-repeat center center;
@@ -126,22 +126,28 @@
     text-align: left;
     transition: none 500ms ease-in-out;
     transition-property: opacity, visibility;
-    transition-delay: 500ms;`
+    transition-delay: 500ms;
   }
   
   /* (duploaded-file--open) Modifier Class */
   .file-details--open {
-    height: auto;
     visibility: visible;
     opacity: 1;
+    padding-top: 20px;
   }
   
   .file-details__title {
     font-size: 1.125rem;
     font-weight: 500;
     color: var(--clr-light-gray);
+    visibility: hidden;
   }
-  
+
+  .file-details__title--open {
+    visibility: visible;
+    text-align: center;
+  }
+
   /* Uploaded File */
   .uploaded-file {
     display: flex;
@@ -152,13 +158,11 @@
     transition: none 500ms ease-in-out;
     transition-property: visibility, opacity;
   }
-  
   /* (duploaded-file--open) Modifier Class */
   .uploaded-file--open {
     visibility: visible;
     opacity: 1;
   }
-  
   .uploaded-file__icon-container {
     position: relative;
     margin-right: 0.3125rem;
@@ -238,4 +242,5 @@
   .uploaded-file__counter {
     font-size: 1rem;
     color: var(--clr-light-gray);
+    padding-left: 10px;
   }

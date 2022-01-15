@@ -29,7 +29,7 @@ $(document).ready(function () {
       cache: false,
       processData: false,
       async: true,
-	    beforeSend: function(){
+      beforeSend: function () {
         $('#pokeball-showup').addClass("pokeball-show");
         $('#pokeball-showup').css('display', 'flex');
         $('#pokeball-showup').css('flex-direction', 'column');
@@ -46,11 +46,11 @@ $(document).ready(function () {
               $('#pokeball-showup-item').toggle("explode");
               let hrElement;
               for (let i = 0; i < 100; i++) {
-                  hrElement = document.createElement("hr");
-                  hrElement.style.left = Math.floor(Math.random() * window.innerWidth) - 150 + "px";
-                  hrElement.style.animationDuration = 0.2 + Math.random() * 0.3 + "s";
-                  hrElement.style.animationDelay = Math.random() * 5 + "s";
-                  $('#parents').append(hrElement);
+                hrElement = document.createElement("hr");
+                hrElement.style.left = Math.floor(Math.random() * window.innerWidth) - 150 + "px";
+                hrElement.style.animationDuration = 0.2 + Math.random() * 0.3 + "s";
+                hrElement.style.animationDelay = Math.random() * 5 + "s";
+                $('#parents').append(hrElement);
               }
               $('#parents').css('display', 'flex');
               $('#parents').css('flex-direction', 'column');
@@ -82,26 +82,26 @@ $(document).ready(function () {
     $('#result').fadeOut(1000);
   });
 
-  $('#pokedexLink').click(function(){
+  $('#pokedexLink').click(function () {
     let url = $(this).attr('href');
     $('body').css('animation', 'backOutRight 3000ms');
-    setTimeout(function() {
-        document.location.href = url;
+    setTimeout(function () {
+      document.location.href = url;
     }, 1000);
     return false;
   });
 
-  $('#battleLink').click(function(){
+  $('#battleLink').click(function () {
     let url = $(this).attr('href');
     $('body').css('animation', 'backOutRight 3000ms');
-    setTimeout(function() {
-        document.location.href = url;
+    setTimeout(function () {
+      document.location.href = url;
     }, 1000);
     return false;
   });
 
   function createPokemonCard(element, element_string, img_name) {
-    const {hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type} = element;
+    const { hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type } = element;
     const card = document.getElementById(`${element_string}_card`);
     const cardThemeColor = typeColor[type.toLowerCase()];
     $(`#${element_string}_hp`).text('HP ' + hp);
@@ -133,9 +133,8 @@ $(document).ready(function () {
     const fileInput = document.querySelector(`#fileInput-pokemon${index + 1}`);
     const fileDetails = document.querySelector(`#fileDetails-pokemon${index + 1}`);
     const uploadedFile = document.querySelector(`#uploadedFile-pokemon${index + 1}`);
+    const uploadedFileTitle = document.querySelector(`#fileDetails-pokemon${index + 1}-uploaded`);
     const uploadedFileInfo = document.querySelector(`#uploadedFileInfo-pokemon${index + 1}`);
-    const uploadedFileName = document.querySelector(`.uploaded-file__name-pokemon${index + 1}`);
-    const uploadedFileIconText = document.querySelector(`.uploaded-file__icon-text-pokemon${index + 1}`);
     const uploadedFileCounter = document.querySelector(`.uploaded-file__counter-pokemon${index + 1}`);
     dropZoon.addEventListener('dragover', (event) => {
       event.preventDefault();
@@ -163,6 +162,7 @@ $(document).ready(function () {
       if (fileValidate(file.type)) {
         dropZoon.classList.add('drop-zoon--Uploaded');
         loadingText.style.display = "block";
+        uploadedFileTitle.classList.remove('file-details__title--open')
         uploadedFile.classList.remove('uploaded-file--open');
         uploadedFileInfo.classList.remove('uploaded-file__info--active');
         fileReader.addEventListener('load', handleLoadFile);
@@ -170,26 +170,30 @@ $(document).ready(function () {
       }
     };
 
-    function handleLoadFile(event) {
-      setTimeout(function () {
-        loadingText.style.display = "none";
-        fileDetails.classList.add('file-details--open');
-        uploadedFile.classList.add('uploaded-file--open');
-        uploadedFileInfo.classList.add('uploaded-file__info--active');
-        dropZoon.style.background = `url('${event.currentTarget.result}') no-repeat center center`;
-        dropZoon.style.backgroundSize = 'contain';
-        dropZoon.style.opacity = '1';
-        dropZoon.style.border = '0';
-      }, 500);
-      progressMove();
+    async function handleLoadFile(event) {
+      loadingText.style.display = "none";
+      fileDetails.classList.add('file-details--open');
+      uploadedFile.classList.add('uploaded-file--open');
+      uploadedFileInfo.classList.add('uploaded-file__info--active');
+      progressMove(event.currentTarget.result);
     }
 
-    function progressMove() {
+    function progressMove(url) {
       let counter = 0;
-      setTimeout(() => {
+      setTimeout(async () => {
         let counterIncrease = setInterval(() => {
           if (counter === 100) {
             clearInterval(counterIncrease);
+            uploadedFileTitle.classList.add('file-details__title--open')
+            dropZoon.style.animation = 'fadeIn 1000ms';
+            dropZoon.style.background = `url('${url}') no-repeat center center`;
+            dropZoon.style.backgroundSize = 'contain';
+            dropZoon.style.opacity = '1';
+            dropZoon.style.border = '0';
+            if(document.querySelector(`#dropZoon-pokemon1`).style.background &&
+            document.querySelector(`#dropZoon-pokemon2`).style.background) {
+             $(`#btn-predict`).prop( "disabled", false )
+           } else $(`#btn-predict`).prop( "disabled", true )
           } else {
             counter = counter + 10;
             uploadedFileCounter.innerHTML = `${counter}%`
@@ -200,8 +204,6 @@ $(document).ready(function () {
 
     function fileValidate(fileType) {
       let isImage = imagesTypes.filter((type) => fileType.indexOf(`image/${type}`) !== -1);
-      if (isImage[0] === 'jpeg') uploadedFileIconText.innerHTML = 'jpg';
-      else uploadedFileIconText.innerHTML = isImage[0];
       if (isImage.length !== 0) return true;
       else return alert('Please make sure to upload An Image File Type');
     };
