@@ -120,6 +120,8 @@ $(document).ready(function () {
 
     $('#btn-battleScore').click(function () {
         let form_data = new FormData($('#upload-file')[0]);
+        const ids = $('form').serializeArray();
+        console.log(ids);
         $.ajax({
           type: 'POST',
           url: '/battle',
@@ -141,29 +143,46 @@ $(document).ready(function () {
                 $('#pokeball-showup-item').css('animation', 'wobble 1500ms');
                 setTimeout(function () {
                     $('#pokeball-showup-item').css('animation', 'tada 1500ms');
-                    $('#pokeball-showup-item').toggle("explode");
-                    let hrElement;
-                    for (let i = 0; i < 100; i++) {
+                    setTimeout(function () {
+                      $('#pokeball-showup-item').toggle("explode");
+                      let hrElement;
+                      for (let i = 0; i < 100; i++) {
                         hrElement = document.createElement("hr");
                         hrElement.style.left = Math.floor(Math.random() * window.innerWidth) - 150 + "px";
                         hrElement.style.animationDuration = 0.2 + Math.random() * 0.3 + "s";
                         hrElement.style.animationDelay = Math.random() * 5 + "s";
                         $('#parents').append(hrElement);
-                    }
-                    $('#result').fadeIn(500);
-                }, 1500);
+                      }
+                      $('#parents').css('display', 'flex');
+                      $('#parents').css('flex-direction', 'column');
+                      $('#parents').css('align-items', 'center');
+                      $('#parents').css('justify-content', 'space-around');
+                      $('#parents').fadeIn(1000);
+                      $('#pokemon_parent1_card').css('animation', 'fadeInLeft 1500ms');
+                      setTimeout(function () {
+                        $('#pokemon_parent2_card').css('animation', 'fadeInRight 1500ms');
+                        setTimeout(function () {
+                          $('#result').fadeIn(1000);
+                        }, 1500)
+                      }, 1500)
+                    }, 1500)
+                }, 1500)
             }, 2000);
           },
           success: function (data) {
             const [winner_id, winner, probability] = data.pokemon_data;
+            const pokemon1 = pokedex.pokedexData.find(pokemon => pokemon.id === ids[0].value );
+            const pokemon2 = pokedex.pokedexData.find(pokemon => pokemon.id === ids[1].value );
             $(`#winner_text`).text(`The winner is ${winner.name} with probability of ${probability}% 🥊🥊🥊`);
+            createPokemonCard(pokemon1, 'pokemon_parent1');
+            createPokemonCard(pokemon2, 'pokemon_parent2');
             createPokemonCard(winner, 'pokemon_winner');
           }
         });
     });
 
-    function createPokemonCard(element, element_string) {
-        const {hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type, image} = element;
+    function createPokemonCard(element, element_string, img_element) {
+        const {hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type, image } = element;
         const card = document.getElementById(`${element_string}_card`);
         const cardThemeColor = typeColor[type.toLowerCase()];
         $(`#${element_string}_hp`).text('HP ' + hp);
@@ -184,6 +203,7 @@ $(document).ready(function () {
 
       $('#btn-back').click(function () {
         $('#pokeball-showup').css('display', 'none');
+        $('#parents').css('display', 'none');
         $('#result').fadeOut(1000);
       });
 });

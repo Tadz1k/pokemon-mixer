@@ -44,6 +44,9 @@ def home():
 def battle():
     return render_template('battle.html')
 
+@app.route('/battle', methods=['POST'])
+def getBattleScore():
+    return {'pokemon_data': battle_system.get_winner(request.form['pokemon1-battle-select'], request.form['pokemon2-battle-select'])}
 
 @app.route('/pokedexData', methods=['GET'])
 def getPokedexData():
@@ -59,10 +62,6 @@ def pokedex():
 @app.route('/pokemon/<pokemon_id>', methods=['GET'])
 def getPokemonById(pokemon_id):
     return {'pokemon_data': csv_controller.get_pokemon_by_id(pokemon_id)}
-
-@app.route('/battle', methods=['POST'])
-def getBattleScore():
-    return {'pokemon_data': battle_system.get_winner(request.form['pokemon1-battle-select'], request.form['pokemon2-battle-select'])}
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():

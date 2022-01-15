@@ -5,6 +5,7 @@ import random
 def get_winner(id_pokemon1, id_pokemon2):
     pokemon1 = csv_controller.get_pokemon_by_id(id_pokemon1)
     pokemon2 = csv_controller.get_pokemon_by_id(id_pokemon2)
+
     print(pokemon1)
     print(pokemon2)
     #grass, fire, flying, water, bug, poison, normal, dark, electric, psychic, ground, ice, steel, fairy, rock, ghost, fighting, dragon
