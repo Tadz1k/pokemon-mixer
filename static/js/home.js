@@ -103,7 +103,7 @@ $(document).ready(function () {
   function createPokemonCard(element, element_string, img_name) {
     const { hp, id, name, attack, defense, speed, speedattack, speeddefense, total, type } = element;
     const card = document.getElementById(`${element_string}_card`);
-    const cardThemeColor = typeColor[type.toLowerCase()];
+    const cardThemeColor = typeColor[type.split(' ')[0].toLowerCase()];
     $(`#${element_string}_hp`).text('HP ' + hp);
     $(`#${element_string}_img`).attr("src", img_name);
     $(`#${element_string}_id`).text(`#${id}`);
